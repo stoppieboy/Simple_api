@@ -15,6 +15,9 @@ app.use(
 );
 app.use(express.json())
 app.use('/',indexRoute);
+app.get('/', (req,res) => {
+    res.status(200).json({success: true});
+});
 app.use('*', (req, res) => {
     return res.status(404).json({
       success: false,
